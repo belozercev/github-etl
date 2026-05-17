@@ -18,7 +18,7 @@ REPOS = [
 ]
 
 def extract_github_data():
-    client = clickhouse_connect.get_client(host='clickhouse', port=8123)
+    client = clickhouse_connect.get_client(host='clickhouse', port=8123, username='default', password='clickhouse')
     
     for repo in REPOS:
         url = f'https://api.github.com/repos/{repo}'
