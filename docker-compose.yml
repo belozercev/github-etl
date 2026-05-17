@@ -29,7 +29,8 @@ services:
       - "8080:8080"
     volumes:
       - ./dags:/opt/airflow/dags
-    command: standalone
+      - ./requirements.txt:/requirements.txt
+    command: bash -c "pip install -r /requirements.txt && airflow standalone"
 
   superset:
     image: apache/superset:latest
