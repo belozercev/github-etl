@@ -46,7 +46,7 @@ services:
       - SUPERSET_SECRET_KEY=mysecretkey
     command: >
       bash -c "pip install psycopg2-binary &&
-               /app/docker/docker-entrypoint.sh"
+               /app/docker/entrypoints/run-server.sh"
 
 volumes:
   clickhouse_data:
